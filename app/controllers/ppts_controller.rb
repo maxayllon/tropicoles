@@ -1,4 +1,4 @@
-class PptsController < ApplicationControlle
+class PptsController < ApplicationController
   def new
     @ppt = Ppt.new
   end

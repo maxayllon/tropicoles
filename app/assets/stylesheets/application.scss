@@ -10,3 +10,11 @@
 
 // Your CSS partials
 @import "components/index";
+@import "homepage/index";
+@import "ppt/index";
+@import "devise/index";
+@import "teams/index";
+
+.no-display {
+  display: none;
+}
