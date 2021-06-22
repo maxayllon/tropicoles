@@ -1,0 +1,2 @@
+class PptsController < ApplicationController
+end

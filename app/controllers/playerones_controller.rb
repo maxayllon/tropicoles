@@ -1,0 +1,2 @@
+class PlayeronesController < ApplicationController
+end
