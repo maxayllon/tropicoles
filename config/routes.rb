@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'homepages#homepage'
+
+  resources :ppts do
+    member do
+      get :description
+      get :first_page
+    end
+  end
+
+  resources :ppts, only: [:new, :create, :show] do
+    resources :teamones, only: [:create] do
+      resources :playerones, only: [:create]
+    end
+    resources :teamtwos, only: [:create] do
+      resources :playertwos, only: [:create]
+    end
+  end
 end
