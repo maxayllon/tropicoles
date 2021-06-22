@@ -36,3 +36,16 @@
   display: flex;
   justify-content: center
 }
+
+.flex {
+  display: flex
+}
+
+.plus-flex {
+  display: flex;
+  justify-content: flex-end;
+  .plus {
+    height: 28px;
+    width: 28px;
+  }
+}
