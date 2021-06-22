@@ -1,0 +1,15 @@
+<div class="background">
+  <h1 class="title-page">DONNE UN NOM À TON PPT</h1>
+  <div class="form-ppt">
+    <div id="form-container" class="container">
+      <%= simple_form_for(@ppt) do |f| %>
+        <div id="info" class="line">
+          <%= f.input :name, placeholder: "Castagne" %>
+          <div class="submit">
+            <%= f.submit "Submit", class: "button-submit" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

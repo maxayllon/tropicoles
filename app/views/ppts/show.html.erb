@@ -1,0 +1,32 @@
+<div class="background">
+  <div class="title-page">
+    <%= @ppt_up%>
+  </div>
+
+  <div class="form-ppt">
+    <div id="form-container" class="container">
+      <%= simple_form_for([@ppt, @teamone]) do |f| %>
+        <div id="info" class="line">
+          <%= f.input :name, placeholder: "Team de fou" %>
+          <div class="submit">
+            <%= f.submit "Submit", class: "button-submit" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-ppt">
+    <div id="form-container" class="container">
+      <%= simple_form_for([@ppt, @teamtwo]) do |f| %>
+        <div id="info" class="line">
+          <%= f.input :name, placeholder: "Team de fou" %>
+          <div class="submit">
+            <%= f.submit "Submit", class: "button-submit" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "ppt", description_ppt_path(@ppt) %>
