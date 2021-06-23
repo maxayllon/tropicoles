@@ -41,6 +41,6 @@ class PptsController < ApplicationController
   private
 
   def ppt_params
-    params.require(:ppt).permit(:name)
+    params.require(:ppt).permit(:name, :photo)
   end
 end
