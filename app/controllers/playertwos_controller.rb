@@ -8,6 +8,13 @@ class PlayertwosController < ApplicationController
     redirect_to description_ppt_path(@ppt)
   end
 
+  def destroy
+    @playertwo = Playertwo.find(params[:id])
+    @ppt = @playertwo.teamtwo.ppt
+    @playertwo.destroy
+    redirect_to description_ppt_path(@ppt)
+  end
+
   private
 
   def playertwo_params

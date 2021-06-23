@@ -21,6 +21,7 @@
       </div>
       <% @playerones.each do |playerone| %>
         <%= playerone.name %>
+                <%= link_to 'delete', playerone_path(playerone), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
     <div class="form-ppt">
@@ -41,6 +42,8 @@
       </div>
       <% @playertwos.each do |playertwo| %>
         <%= playertwo.name %>
+        <%= link_to 'delete', playertwo_path(playertwo), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= playertwo.teamtwo.ppt %>
       <% end %>
     </div>
   </div>

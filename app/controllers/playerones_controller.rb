@@ -9,10 +9,10 @@ class PlayeronesController < ApplicationController
   end
 
   def destroy
-    @ppt = Ppt.find(params[:id])
-    @teamone = Teamone.find(params[:ppt_id])
-    @teamone.destroy
-    redirect_to ppt_path(@ppt)
+    @playerone = Playerone.find(params[:id])
+    @playerone.destroy
+    @ppt = @playerone.teamone.ppt
+    redirect_to description_ppt_path(@ppt)
   end
 
   private
