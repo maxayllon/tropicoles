@@ -21,7 +21,9 @@
       </div>
       <% @playerones.each do |playerone| %>
         <%= playerone.name %>
-                <%= link_to 'delete', playerone_path(playerone), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to playerone_path(playerone), method: :delete do %>
+          <%= image_tag "trash.png" %>
+        <% end %>
       <% end %>
     </div>
     <div class="form-ppt">
@@ -42,12 +44,19 @@
       </div>
       <% @playertwos.each do |playertwo| %>
         <%= playertwo.name %>
-        <%= link_to 'delete', playertwo_path(playertwo), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= playertwo.teamtwo.ppt %>
+        <%= link_to playertwo_path(playertwo), method: :delete do %>
+          <%= image_tag "trash.png" %>
+        <% end %>
       <% end %>
     </div>
   </div>
-  <div class="submit">
-    <%= link_to "start", first_page_ppt_path(@ppt), class: "button-principal" %>
-  </div>
+  <% if @playertwos.length == @playerones.length && @playertwos.length > 0 %>
+    <div class="submit">
+      <%= link_to "start", first_page_ppt_path(@ppt), class: "button-principal" %>
+    </div>
+  <% else %>
+    <div class="submit">
+      <h4 class= "button-principal">No Submit</h4>
+    </div>
+  <% end %>
 </div>

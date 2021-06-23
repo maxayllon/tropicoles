@@ -16,7 +16,9 @@
           <% end %>
         <% else %>
           <%= @ppt.teamone.name %>
-          <%= link_to "delete", ppt_teamone_path(@ppt.teamone), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to ppt_teamone_path(@ppt.teamone), method: :delete do %>
+            <%= image_tag "trash.png" %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -33,12 +35,20 @@
           <% end %>
         <% else %>
           <%= @ppt.teamtwo.name %>
-          <%= link_to "delete", ppt_teamtwo_path(@ppt.teamtwo), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to ppt_teamtwo_path(@ppt.teamtwo), method: :delete do %>
+            <%= image_tag "trash.png" %>
+          <% end %>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="submit">
-    <%= link_to "ppt", description_ppt_path(@ppt), class: "button-principal" %>
-  </div>
+  <% if @ppt.teamone.nil? || @ppt.teamtwo.nil?  %>
+    <div class="submit">
+      <h4 class= "button-principal">No Submit</h4>
+    </div>
+  <% else %>
+    <div class="submit">
+      <%= link_to "ppt", description_ppt_path(@ppt), class: "button-principal" %>
+    </div>
+  <% end %>
 </div>
