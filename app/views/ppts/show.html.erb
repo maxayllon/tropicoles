@@ -5,25 +5,35 @@
   <div class="forms">
     <div class="form-ppt">
       <div id="form-container" class="container">
-        <%= simple_form_for([@ppt, @teamone]) do |f| %>
-          <div id="info" class="line">
-            <%= f.input :name, placeholder: "Team de fou" %>
-            <div class="submit disappear">
-              <%= f.submit "Submit", class: "button-submit" %>
+        <% if @ppt.teamone.nil? %>
+          <%= simple_form_for([@ppt, @teamone]) do |f| %>
+            <div id="info" class="line">
+              <%= f.input :name, placeholder: "Team de fou" %>
+              <div class="submit disappear">
+                <%= f.submit "Submit", class: "button-submit" %>
+              </div>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+          <%= @ppt.teamone.name %>
+          <%= link_to "delete", ppt_teamone_path(@ppt.teamone), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
       </div>
     </div>
     <div class="form-ppt">
       <div id="form-container" class="container">
-        <%= simple_form_for([@ppt, @teamtwo]) do |f| %>
-          <div id="info" class="line">
-            <%= f.input :name, placeholder: "Team de fou" %>
-            <div class="submit disappear">
-              <%= f.submit "Submit", class: "button-submit" %>
+        <% if @ppt.teamtwo.nil? %>
+          <%= simple_form_for([@ppt, @teamtwo]) do |f| %>
+            <div id="info" class="line">
+              <%= f.input :name, placeholder: "Team de fou" %>
+              <div class="submit disappear">
+                <%= f.submit "Submit", class: "button-submit" %>
+              </div>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+          <%= @ppt.teamtwo.name %>
+          <%= link_to "delete", ppt_teamtwo_path(@ppt.teamtwo), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
       </div>
     </div>
@@ -32,4 +42,3 @@
     <%= link_to "ppt", description_ppt_path(@ppt), class: "button-principal" %>
   </div>
 </div>
-

@@ -9,12 +9,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :ppts, only: [:new, :create, :show, :update] do
-    resources :teamones, only: [:create, :update] do
-      resources :playerones, only: [:create, :update]
+  resources :ppts, only: [:new, :create, :show, :update, :destroy] do
+    resources :teamones, only: [:create, :update, :destroy] do
+      resources :playerones, only: [:create, :update, :destroy]
     end
-    resources :teamtwos, only: [:create, :update] do
-      resources :playertwos, only: [:create, :update]
+    resources :teamtwos, only: [:create, :update, :destroy] do
+      resources :playertwos, only: [:create, :update, :destroy]
     end
   end
 end

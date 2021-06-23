@@ -4,6 +4,14 @@ class TeamtwosController < ApplicationController
     @teamtwo = Teamtwo.new(teamtwo_params)
     @teamtwo.ppt = @ppt
     @teamtwo.save
+    redirect_to ppt_path(@ppt)
+  end
+
+  def destroy
+    @ppt = Ppt.find(params[:id])
+    @teamtwo = Teamtwo.find(params[:ppt_id])
+    @teamtwo.destroy
+    redirect_to ppt_path(@ppt)
   end
 
   private
