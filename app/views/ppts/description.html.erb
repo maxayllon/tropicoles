@@ -18,42 +18,10 @@
             </div>
           </div>
         <% end %>
-        <%= simple_form_for([@ppt, @teamone, @playerone]) do |f| %>
-          <div id="info" class="line">
-            <div class="flex">
-              <%= f.input :name, placeholder: "Team de fou" %>
-              <div class="submit disappear">
-                <%= f.submit "Submit", class: "button-submit-player" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <%= simple_form_for([@ppt, @teamone, @playerone]) do |f| %>
-          <div id="info" class="line">
-            <div class="flex">
-              <%= f.input :name, placeholder: "Team de fou" %>
-              <div class="submit disappear">
-                <%= f.submit "Submit", class: "button-submit-player" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <div class="playerone-add no-display">
-          <%= simple_form_for([@ppt, @teamone, @playerone]) do |f| %>
-            <div id="info" class="line">
-              <div class="flex">
-                <%= f.input :name, placeholder: "Team de fou" %>
-                <div class="submit disappear">
-                  <%= f.submit "Submit", class: "button-submit-player" %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
       </div>
-      <div class="plus-flex">
-        <%= image_tag "plus.png", class: "plus plus-one" %>
-      </div>
+      <% @playerones.each do |playerone| %>
+        <%= playerone.name %>
+      <% end %>
     </div>
     <div class="form-ppt">
       <div class="title-medium">
@@ -70,41 +38,6 @@
             </div>
           </div>
         <% end %>
-        <%= simple_form_for([@ppt, @teamtwo, @playertwo]) do |f| %>
-          <div id="info" class="line">
-            <div class="flex">
-              <%= f.input :name, placeholder: "Team de fou" %>
-              <div class="submit disappear">
-                <%= f.submit "Submit", class: "button-submit-player" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <%= simple_form_for([@ppt, @teamtwo, @playertwo]) do |f| %>
-          <div id="info" class="line">
-            <div class="flex">
-              <%= f.input :name, placeholder: "Team de fou" %>
-              <div class="submit disappear">
-                <%= f.submit "Submit", class: "button-submit-player" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <div class="playertwo-add no-display">
-          <%= simple_form_for([@ppt, @teamtwo, @playertwo]) do |f| %>
-            <div id="info" class="line">
-              <div class="flex">
-                <%= f.input :name, placeholder: "Team de fou" %>
-                <div class="submit disappear">
-                  <%= f.submit "Submit", class: "button-submit-player" %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="plus-flex">
-        <%= image_tag "plus.png", class: "plus plus-two" %>
       </div>
     </div>
   </div>

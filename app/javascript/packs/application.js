@@ -28,6 +28,4 @@ import { plusButton } from '../plugins/plus';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  submitButton();
-  plusButton();
 });

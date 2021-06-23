@@ -8,11 +8,6 @@ class TeamonesController < ApplicationController
 
   end
 
-  def update
-    @teamone = Teamone.find(params[:id])
-    @teamone.update(teamone_params)
-  end
-
   def destroy
     @ppt = Ppt.find(params[:id])
     @teamone = Teamone.find(params[:ppt_id])

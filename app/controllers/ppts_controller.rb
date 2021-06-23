@@ -30,6 +30,8 @@ class PptsController < ApplicationController
     @teamone = @ppt.teamone
     @playerone = Playerone.new
     @playertwo = Playertwo.new
+    @playerones = @teamone.playerones
+    @playertwos = @teamtwo.playertwos
   end
 
   def first_page
