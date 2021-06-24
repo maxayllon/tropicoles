@@ -4,7 +4,7 @@
     <% if @ppt.photo.attached?  %>
       <%= cl_image_tag @ppt.photo.key, class: "photo_user" %>
     <% else %>
-      <%= image_tag "Logo.png" %>
+      <%= image_tag "Logo.png", class: "photo_user" %>
     <% end %>
   </div>
   <div class="forms">
@@ -29,7 +29,7 @@
     </div>
     <div class="form-ppt">
       <div id="form-container" class="container">
-        <% if @ppt.teamtwo.nil? %>
+        <% if @ppt.teamtwo.nil? && @ppt.teamone.nil? == false  %>
           <%= simple_form_for([@ppt, @teamtwo]) do |f| %>
             <div id="info" class="line">
               <%= f.input :name, placeholder: "Team de fou" %>
@@ -38,6 +38,8 @@
               </div>
             </div>
           <% end %>
+        <% elsif @ppt.teamtwo.nil? %>
+          <h1>team 2</h1>
         <% else %>
           <%= @ppt.teamtwo.name %>
           <%= link_to ppt_teamtwo_path(@ppt.teamtwo), method: :delete do %>
