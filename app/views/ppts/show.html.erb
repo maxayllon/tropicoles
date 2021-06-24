@@ -1,7 +1,11 @@
 <div class="background">
   <div class="title-page">
     <%= @ppt_up%>
-    <%= cl_image_tag @ppt.photo.key, class: "ppt_photo" %>
+    <% if @ppt.photo.attached?  %>
+      <%= cl_image_tag @ppt.photo.key, class: "ppt_photo" %>
+    <% else %>
+      <%= image_tag "Logo.png" %>
+    <% end %>
   </div>
   <div class="forms">
     <div class="form-ppt">
