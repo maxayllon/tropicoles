@@ -5,7 +5,7 @@
       <%= simple_form_for(@ppt) do |f| %>
         <div id="info" class="line">
           <%= f.input :name, placeholder: "Castagne" %>
-          <%= f.input :photo, as: :file, class: "photo_ppt" %>
+          <%= f.input :photo, as: :file %>
           <div class="submit">
             <%= f.submit "Submit", class: "button-submit" %>
           </div>
