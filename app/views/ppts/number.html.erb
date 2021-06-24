@@ -1,0 +1,8 @@
+<h1>nom du jeu </h1>
+<h2>choisissez un chiffre</h2>
+<%= @player_number %>
+<br>
+<% @random_number.each do |number| %>
+  <%= number %>
+<% end %>
+<%= link_to "rules", auction_ppt_path %>

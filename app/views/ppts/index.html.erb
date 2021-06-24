@@ -1,3 +1,4 @@
 <% @ppts.each do |ppt| %>
   <%= ppt.name %>
+  <%= link_to "ppt", ppt_path(ppt) %>
 <% end %>

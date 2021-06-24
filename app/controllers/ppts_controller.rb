@@ -44,6 +44,33 @@ class PptsController < ApplicationController
     @ppt = Ppt.find(params[:id])
   end
 
+  def rules
+    @ppt = Ppt.find(params[:id])
+  end
+
+  def kick_off
+  end
+
+  def number
+    @ppt = Ppt.find(params[:id])
+    @playerones =@ppt.teamone.playerones
+    @playertwos =@ppt.teamtwo.playertwos
+    @player_number = @playerones.count + @playertwos.count
+    @numbers = [1, 8, 9, 10, 13, 15, 333, 666, 15, 100]
+    @random_number = @numbers[0..(@player_number-1)]
+  end
+
+  def auction
+  end
+
+  def challenge
+    @ppt = Ppt.find(params[:id])
+  end
+
+  def rap_contenders
+    @ppt = Ppt.find(params[:id])
+  end
+
   private
 
   def ppt_params

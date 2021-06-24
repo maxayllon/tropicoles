@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     member do
       get :description
       get :first_page
+      get :rules
+      get :kick_off
+      get :number
+      get :auction
+      get :challenge
+      get :rap_contenders
     end
   end
 
@@ -13,7 +19,7 @@ Rails.application.routes.draw do
   resources :playertwos, only: [:destroy]
 
   resources :ppts, only: [:index, :new, :create, :show, :destroy] do
-    resources :teamones, only: [:create, :destroy] do
+    resources :teamones, only: [:create] do
       resources :playerones, only: [:create]
     end
     resources :teamtwos, only: [:create, :destroy] do
