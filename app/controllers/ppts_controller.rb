@@ -1,4 +1,10 @@
 class PptsController < ApplicationController
+  def index
+    @ppts = Ppt.all.select do |ppt|
+      ppt.user == current_user
+    end
+  end
+
   def new
     @ppt = Ppt.new
   end

@@ -20,10 +20,12 @@
         <% end %>
       </div>
       <% @playerones.each do |playerone| %>
-        <%= playerone.name %>
-        <%= link_to playerone_path(playerone), method: :delete do %>
-          <%= image_tag "trash.png" %>
-        <% end %>
+        <div class="player">
+          <%= playerone.name %>
+          <%= link_to playerone_path(playerone), method: :delete do %>
+            <%= image_tag "trash.png" %>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <div class="form-ppt">
@@ -43,10 +45,12 @@
         <% end %>
       </div>
       <% @playertwos.each do |playertwo| %>
-        <%= playertwo.name %>
-        <%= link_to playertwo_path(playertwo), method: :delete do %>
-          <%= image_tag "trash.png" %>
-        <% end %>
+        <div class="player">
+          <%= playertwo.name %>
+          <%= link_to playertwo_path(playertwo), method: :delete do %>
+            <%= image_tag "trash.png" %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
