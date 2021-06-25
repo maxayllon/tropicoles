@@ -55,7 +55,7 @@ class PptsController < ApplicationController
     @playerones =@ppt.teamone.playerones
     @playertwos =@ppt.teamtwo.playertwos
     @player_number = @playerones.count + @playertwos.count
-    @numbers = [1, 8, 9, 10, 13, 15, 333, 666, 15, 100]
+    @numbers = [1, 8, 9, 10, 13, 15, 333, 666, 15, 100].shuffle
     @random_number = @numbers[0..(@player_number-1)]
   end
 
