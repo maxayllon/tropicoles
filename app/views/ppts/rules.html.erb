@@ -1,4 +1,8 @@
-<%= cl_image_tag @ppt.photo.key, class: "rules-photos" %>
+<% if @ppt.photo.attached?  %>
+  <%= cl_image_tag @ppt.photo.key, class: "rules-photos" %>
+<% else %>
+  <%= image_tag "Logo.png", class: "photo_user" %>
+<% end %>
 <h3>Celui qui nous casse les couilles = un cul sec, Un bide = un cul sec
 Visite au toilette => une galipette
 À CHAQUE apparition de cette photo 2pt pour la team qui hurle en premier« Pirate ».

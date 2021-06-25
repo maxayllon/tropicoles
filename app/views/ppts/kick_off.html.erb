@@ -2,4 +2,9 @@
 <p>vidéo twerk / culs sec qui arrive</p>
 <%= image_tag "bar.jpg" %>
 <%= link_to "rules", number_ppt_path %>
-<%= cl_image_tag @ppt.photo.key, class: "photo_user" %>
+<% if @ppt.photo.attached?  %>
+  <%= cl_image_tag @ppt.photo.key, class: "photo_user" %>
+<% else %>
+  <%= image_tag "Logo.png", class: "photo_user" %>
+<% end %>
+

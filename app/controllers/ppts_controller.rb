@@ -1,4 +1,6 @@
 class PptsController < ApplicationController
+  before_action :find_ppt, only: [:show, :destroy, :description, :first_page, :kick_off, :rules, :number, :challenge, :rap_contenders]
+
   def index
     @ppts = Ppt.all.select do |ppt|
       ppt.user == current_user
@@ -20,7 +22,6 @@ class PptsController < ApplicationController
   end
 
   def show
-    @ppt = Ppt.find(params[:id])
     @ppt_up = @ppt.name.upcase
 
     @teamone = Teamone.new
@@ -28,7 +29,6 @@ class PptsController < ApplicationController
   end
 
   def description
-    @ppt = Ppt.find(params[:id])
     @ppt_up = @ppt.name.upcase
     @teamone_name = @ppt.teamone.name.upcase
     @teamtwo_name = @ppt.teamtwo.name.upcase
@@ -41,18 +41,15 @@ class PptsController < ApplicationController
   end
 
   def first_page
-    @ppt = Ppt.find(params[:id])
   end
 
   def rules
-    @ppt = Ppt.find(params[:id])
   end
 
   def kick_off
   end
 
   def number
-    @ppt = Ppt.find(params[:id])
     @playerones =@ppt.teamone.playerones
     @playertwos =@ppt.teamtwo.playertwos
     @player_number = @playerones.count + @playertwos.count
@@ -64,16 +61,18 @@ class PptsController < ApplicationController
   end
 
   def challenge
-    @ppt = Ppt.find(params[:id])
   end
 
   def rap_contenders
-    @ppt = Ppt.find(params[:id])
   end
 
   private
 
   def ppt_params
     params.require(:ppt).permit(:name, :photo)
+  end
+
+  def find_ppt
+    @ppt = Ppt.find(params[:id])
   end
 end
