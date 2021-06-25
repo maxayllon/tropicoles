@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   resources :ppts do
     member do
       get :description
-      get :first_page
-      get :rules
-      get :kick_off
-      get :number
-      get :auction
-      get :challenge
-      get :rap_contenders
+      get :a_first_page
+      get :b_rules
+      get :c_kick_off
+      get :d_number
+      get :e_auction
+      get :f_challenge
+      get :g_rap_contenders
     end
   end
 

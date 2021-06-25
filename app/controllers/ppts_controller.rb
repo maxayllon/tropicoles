@@ -1,5 +1,7 @@
 class PptsController < ApplicationController
-  before_action :find_ppt, only: [:show, :destroy, :description, :first_page, :kick_off, :rules, :number, :challenge, :rap_contenders]
+  before_action :find_ppt, only: [:show, :destroy, :description,
+  :a_first_page, :b_rules, :c_kick_off, :d_number, :f_challenge,
+  :g_rap_contenders]
 
   def index
     @ppts = Ppt.all.select do |ppt|
@@ -40,16 +42,16 @@ class PptsController < ApplicationController
     @playertwos = @teamtwo.playertwos
   end
 
-  def first_page
+  def a_first_page
   end
 
-  def rules
+  def b_rules
   end
 
-  def kick_off
+  def c_kick_off
   end
 
-  def number
+  def d_number
     @playerones =@ppt.teamone.playerones
     @playertwos =@ppt.teamtwo.playertwos
     @player_number = @playerones.count + @playertwos.count
@@ -57,13 +59,13 @@ class PptsController < ApplicationController
     @random_number = @numbers[0..(@player_number-1)]
   end
 
-  def auction
+  def e_auction
   end
 
-  def challenge
+  def f_challenge
   end
 
-  def rap_contenders
+  def g_rap_contenders
   end
 
   private
