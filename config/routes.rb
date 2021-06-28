@@ -14,6 +14,16 @@ Rails.application.routes.draw do
       get :g_rap_contenders
       get :h_picture_contest
       get :i_guess_theme
+      get :j_half_time
+      get :k_return
+      get :l_russian_roulette
+      get :m_millionaire
+      get :n_music
+      get :o_second_half
+      get :p_one_or_other
+      get :q_backs
+      get :r_song_rally
+      get :s_end
     end
   end
 

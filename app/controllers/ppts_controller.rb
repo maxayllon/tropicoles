@@ -1,7 +1,7 @@
 class PptsController < ApplicationController
-  before_action :find_ppt, only: [:show, :destroy, :description, :a_first_page, :b_rules, :c_kick_off, :d_number, :e_auction, :f_challenge, :g_rap_contenders, :h_picture_contest, :i_guess_theme]
+  before_action :find_ppt, only: [:show, :destroy, :description, :a_first_page, :b_rules, :c_kick_off, :d_number, :e_auction, :f_challenge, :g_rap_contenders, :h_picture_contest, :i_guess_theme, :j_half_time, :k_return, :l_russian_roulette, :m_millionaire, :n_music, :o_second_half, :p_one_or_other, :q_backs, :r_song_rally, :s_end]
 
-  before_action :counter, only: [:d_number, :e_auction, :f_challenge, :g_rap_contenders, :h_picture_contes, :i_guess_theme]
+  before_action :counter, only: []
 
   def index
     @ppts = Ppt.all.select do |ppt|
@@ -74,6 +74,36 @@ class PptsController < ApplicationController
   end
 
   def i_guess_theme
+  end
+
+  def j_half_time
+  end
+
+  def k_return
+  end
+
+  def l_russian_roulette
+  end
+
+  def m_millionaire
+  end
+
+  def n_music
+  end
+
+  def o_second_half
+  end
+
+  def p_one_or_other
+  end
+
+  def q_backs
+  end
+
+  def r_song_rally
+  end
+
+  def s_end
   end
 
   private

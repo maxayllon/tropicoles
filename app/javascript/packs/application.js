@@ -23,11 +23,8 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
-import { submitButton } from '../plugins/submit_button';
-import { plusButton } from '../plugins/plus';
-import { counter } from '../plugins/counter';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  counter();
 });
