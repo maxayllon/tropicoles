@@ -1,7 +1,7 @@
 class PptsController < ApplicationController
-  before_action :find_ppt, only: [:show, :destroy, :description,
-  :a_first_page, :b_rules, :c_kick_off, :d_number, :f_challenge,
-  :g_rap_contenders]
+  before_action :find_ppt, only: [:show, :destroy, :description, :a_first_page, :b_rules, :c_kick_off, :d_number, :e_auction, :f_challenge, :g_rap_contenders, :h_picture_contest, :i_guess_theme]
+
+  before_action :counter, only: [:d_number, :e_auction, :f_challenge, :g_rap_contenders, :h_picture_contes, :i_guess_theme]
 
   def index
     @ppts = Ppt.all.select do |ppt|
@@ -52,11 +52,11 @@ class PptsController < ApplicationController
   end
 
   def d_number
-    @playerones =@ppt.teamone.playerones
-    @playertwos =@ppt.teamtwo.playertwos
+    @playerones = @ppt.teamone.playerones
+    @playertwos = @ppt.teamtwo.playertwos
     @player_number = @playerones.count + @playertwos.count
     @numbers = [1, 8, 9, 10, 13, 15, 333, 666, 15, 100].shuffle
-    @random_number = @numbers[0..(@player_number-1)]
+    @random_number = @numbers[0..(@player_number - 1)]
   end
 
   def e_auction
@@ -68,6 +68,14 @@ class PptsController < ApplicationController
   def g_rap_contenders
   end
 
+  def h_picture_contest
+    @themes = [1, 2, 3, 4, 5, 6].shuffle
+    @theme = @themes[0]
+  end
+
+  def i_guess_theme
+  end
+
   private
 
   def ppt_params
@@ -76,5 +84,10 @@ class PptsController < ApplicationController
 
   def find_ppt
     @ppt = Ppt.find(params[:id])
+  end
+
+  def counter
+    @teamone_counter = @ppt.teamone.point
+    @teamtwo_counter = @ppt.teamone.point
   end
 end

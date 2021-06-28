@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get :e_auction
       get :f_challenge
       get :g_rap_contenders
+      get :h_picture_contest
+      get :i_guess_theme
     end
   end
 
