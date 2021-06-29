@@ -3,3 +3,20 @@
 à l'équipe</h2>
 <%= @theme %>
 <%= link_to "rules", i_guess_theme_ppt_path %>
+
+<%= simple_form_for([@ppt, @teamone]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>
+<%= simple_form_for([@ppt, @teamtwo]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>

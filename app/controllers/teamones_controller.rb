@@ -5,7 +5,12 @@ class TeamonesController < ApplicationController
     @teamone.ppt = @ppt
     @teamone.save
     redirect_to ppt_path(@ppt)
+  end
 
+  def update
+    @ppt = Ppt.find(params[:ppt_id])
+    @teamone = @ppt.teamone
+    @teamone.update(teamone_params)
   end
 
   def destroy
@@ -18,6 +23,6 @@ class TeamonesController < ApplicationController
   private
 
   def teamone_params
-    params.require(:teamone).permit(:name)
+    params.require(:teamone).permit(:name, :point)
   end
 end

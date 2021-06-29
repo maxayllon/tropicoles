@@ -1,3 +1,20 @@
 <h1>Cul sec de retour</h1>
 <%= image_tag "beer.png" %>
 <%= link_to "russian", l_russian_roulette_ppt_path %>
+
+<%= simple_form_for([@ppt, @teamone]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>
+<%= simple_form_for([@ppt, @teamtwo]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>

@@ -31,10 +31,10 @@ Rails.application.routes.draw do
   resources :playertwos, only: [:destroy]
 
   resources :ppts, only: [:index, :new, :create, :show, :destroy] do
-    resources :teamones, only: [:create, :destroy] do
+    resources :teamones, only: [:create, :destroy, :update] do
       resources :playerones, only: [:create]
     end
-    resources :teamtwos, only: [:create, :destroy] do
+    resources :teamtwos, only: [:create, :destroy, :update] do
       resources :playertwos, only: [:create]
     end
   end

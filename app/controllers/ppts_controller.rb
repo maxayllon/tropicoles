@@ -34,8 +34,6 @@ class PptsController < ApplicationController
     @ppt_up = @ppt.name.upcase
     @teamone_name = @ppt.teamone.name.upcase
     @teamtwo_name = @ppt.teamtwo.name.upcase
-    @teamtwo = @ppt.teamtwo
-    @teamone = @ppt.teamone
     @playerone = Playerone.new
     @playertwo = Playertwo.new
     @playerones = @teamone.playerones
@@ -114,6 +112,8 @@ class PptsController < ApplicationController
 
   def find_ppt
     @ppt = Ppt.find(params[:id])
+    @teamone = @ppt.teamone
+    @teamtwo = @ppt.teamtwo
   end
 
   def counter

@@ -1,2 +1,19 @@
 <h1>music</h1>
 <%= link_to "second half", o_second_half_ppt_path %>
+
+<%= simple_form_for([@ppt, @teamone]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>
+<%= simple_form_for([@ppt, @teamtwo]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>

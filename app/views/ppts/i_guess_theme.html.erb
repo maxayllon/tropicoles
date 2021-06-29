@@ -3,3 +3,20 @@ cul-sec général</h1>
 <%= link_to "rules", j_half_time_ppt_path %>
 <%= @teamone_counter %>
 <%= @teamtwo_counter %>
+
+<%= simple_form_for([@ppt, @teamone]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>
+<%= simple_form_for([@ppt, @teamtwo]) do |f| %>
+  <div id="info" class="line">
+    <%= f.input :point %>
+    <div class="submit disappear">
+      <%= f.submit "Submit", class: "button-submit" %>
+    </div>
+  </div>
+<% end %>
