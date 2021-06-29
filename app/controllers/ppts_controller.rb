@@ -102,6 +102,13 @@ class PptsController < ApplicationController
   end
 
   def s_end
+    if @teamone.point > @teamtwo.point
+      @team_win = @teamone.name
+    elsif @teamone.point == @teamtwo.point
+      @team_win = "Egalité entre #{@teamone.name} et #{@teamtwo.name}"
+    else
+      @team_win =@teamtwo.name
+    end
   end
 
   private

@@ -1,4 +1,14 @@
-<% @ppts.each do |ppt| %>
-  <%= ppt.name %>
-  <%= link_to "ppt", ppt_path(ppt) %>
+<% if @ptts == [] %>
+  <h1>CRÉÉ TON PREMIER PPT</h1>
+  <%= link_to "jouer", new_ppt_path, class: "button-principal" %>
+<% else %>
+  <% @ppts.each do |ppt| %>
+    <%= ppt.name %>
+    <% if ppt.photo.attached? %>
+      <%= cl_image_tag ppt.photo.key %>
+    <% else %>
+      <%= image_tag "Logo.png" %>
+    <% end %>
+    <%= link_to "ppt", ppt_path(ppt) %>
+  <% end %>
 <% end %>
